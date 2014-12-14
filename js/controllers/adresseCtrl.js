@@ -1,8 +1,63 @@
 'use strict';
 
+
+app.filter('affichage', function() {
+   return function(collection) {
+   var  keyname = 'uid';
+      var output = [], 
+          keys = [];
+          if (collection == undefined){
+
+
+          }else{
+
+        collection.reverse();
+          }
+      angular.forEach(collection, function(item) {
+          var key = item[keyname];
+          if(keys.indexOf(key) === -1) {
+              keys.push(key);
+              output.push(item);
+          }
+      });
+
+      return output;
+   };
+});
+
+app.filter('ladresse', function() {
+   return function(adresse) {
+    var titre = "";
+
+    if (adresse.collectif == "true"){
+      titre = "Bat "+ adresse.batiment + " Etage " + adresse.etage + " Apt " + adresse.appartement;
+      
+    }else{
+      if ((adresse.doublon === "non") || (adresse.doublon == 0 ) ){
+        titre = adresse.numero  + " "+  adresse.complement;
+      }else {
+        titre = adresse.numero + " "+ adresse.doublon + " "+ adresse.complement;
+      }
+      
+    }
+    
+
+      return titre;
+   };
+});
+
+
 app.controller('adresseCtrl', ['$scope','$routeParams','loginService','UserService','LocalStorage','$webSql','$location', function($scope,$routeParams,loginService,UserService,LocalStorage,$webSql,$location){
 
 $scope.adresses = [];
+$scope.getClass = function getClass(statut) {
+  statut = parseInt(statut);
+  return {
+    'entry entryName': (statut == 1) || (statut == 4),
+    'entry entryName orange': (statut == 18) || (statut == 0) || (statut == 2),
+    'entry entryName red': (statut != 1) & (statut != 4) & (statut != 18) & (statut != 0) & (statut != 2) 
+  };
+};
 
 var initDB = function(){
   $scope.db = $webSql.openDatabase('Voltalis', '1.0', 'database', 2000000); 
@@ -19,7 +74,6 @@ $scope.db.createTable('adresses', {
   },
    "numero":{
     "type": "INTEGER",
-    "null": "NOT NULL"
   },
   "doublon":{
     "type": "INTEGER"
