@@ -1,0 +1,116 @@
+<section class="panel panel-padding" ng-controller="villeCtrl">
+<div class="wrap">
+	
+	<h5>Model current : </h5> <b><p>{{model}}</p></b>
+  <!-- <p>debeug listevilles: <b>{{villes}}</b></p> -->
+
+
+   <div class="row">
+         
+        <div class="col ">
+           <label class="toggle">
+                 
+               <input type="checkbox" ng-model="modeEdit">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+            </label>
+         </div>
+
+
+   </div>
+  	 
+<form ng-submit="addville(newTodo)">
+<div class="list list-inset"> 
+  <label class="item item-input">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Ville" ng-model="newTodo.Commune" ng-value="newTodo.Commune">
+    <button ng-show="newTodo.Commune" class="button button-small" type="submit">Créer !</button>
+    <!-- <button ng-hide="newTodo.Commune" class="button button-small" type="submit">Rechercher !</button> -->
+  </label>
+</div>
+</form>
+
+
+
+
+<!-- <form ng-submit="addville(newTodo)">
+  <div class="input-group">
+      <input type="text" class="form-control" placeholder="Ville" ng-model="newTodo.Commune" ng-value="newTodo.Commune">
+      <span  class="input-group-btn">
+        <button ng-show="newTodo.Commune" class="btn btn-default" type="submit">Créer !</button>
+        <button ng-hide="newTodo.Commune" class="btn btn-default" type="submit">Rechercher !</button>
+      </span>
+    </div>
+
+</form> -->
+
+<a href="" ng-click="DropDB()">videz la bdd</a>
+
+<!-- <ion-list ng-hide="createville">
+  <ion-item ng-click='selectville(ville.Codepos)' class="item-thumbnail-left" ng-repeat="ville in villes | filter:newTodo.Commune">
+      <span class="badge pull-right">{{ville.Codepos}}</span>
+      {{ville.Commune}}
+    </a>
+  </ion-item>
+</ion-list> -->
+
+
+
+<ion-list ng-hide="createville" show-delete="data.showDelete" show-reorder="data.showReorder">
+
+        <ion-item class="item item-balanced item-left-editable item-right-editable " ng-repeat="ville in villes | filter:newTodo.Commune" 
+                  item="ville"
+                  href="" ng-click='selectville(ville.Codepos)'>
+         {{ ville.Commune }}
+         <div style="float:right">
+<a href="" ng-click="editville(ville.id)" ng-show="modeEdit"> <i style="
+    color: #fff;
+    font-size: 16px;
+    padding-right: 5%;
+" class="icon ion-edit"></i></a>
+
+<a href="" ng-click="removeville(ville.id)" ng-show="modeEdit"><img style="height: 21px; padding-left:10px" src="img/supp.png"></a>
+
+         </div>
+         
+
+          <ion-delete-button class="ion-minus-circled" 
+                             ng-click="removeville(ville.id)">
+          </ion-delete-button>
+          <ion-option-button class="button-assertive"
+                             ng-click="edit(ville)">
+            supp
+          </ion-option-button>
+          <ion-option-button class="button-royal"
+                             ng-click="share(ville)">
+            editer
+          </ion-option-button>
+        
+        </ion-item>
+
+      </ion-list>
+
+
+<!-- <ion-list ng-hide="createville">
+  <ion-item  ng-click='selectville(ville.Codepos)' ng-repeat="ville in villes | filter:newTodo.Commune">
+     {{ville.Commune}}
+  </ion-item>
+</ion-list> -->
+
+<!-- <ul class="nav nav-pills nav-stacked" ng-hide="createville" >
+  <li class="active" ng-repeat="ville in villes | filter:newTodo.Commune">
+     <ion-option-button class="button-info" ng-click="edit(item)">Edit </ion-option-button>
+    <ion-delete-button class="ion-minus-circled" ng-click="items.splice($index, 1)"> </ion-delete-button>
+
+    <a href="" ng-click='selectville(ville.Codepos)'>
+      <span class="badge pull-right">{{ville.Codepos}}</span>
+      {{ville.Commune}}
+    </a>
+  </li> -->
+ 
+
+</ul>
+</div>
+</section>
+

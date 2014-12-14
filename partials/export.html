@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="yes" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/header.css" />
+        <link rel="stylesheet" type="text/css" href="css/entry.css" />
+        <link rel="stylesheet" type="text/css" href="css/search.css" />
+        <title>Voltalis</title>
+    </head>
+    <body ng-controller="exportCtrl">
+	<!-- HEADER -->
+	<div id="header">
+        <a href="" ng-click="retourville()" class="button icon-left ion-chevron-left button-clear" style="left: 0; margin-top: 15px; position: absolute; margin-left: 10px;"></a>
+		<span id="menuBarTitle">EXPORT</span>
+      
+  
+	</div>
+	<!-- FIN HEADER -->
+{{csv}}
+<form ng-submit="exporting()">
+<div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Date de début</span>
+    <input type="text" ng-model="exporte.debut">
+  </label>
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Date de fin</span>
+    <input type="text" ng-model="exporte.fin">
+  </label>
+
+
+<div class="row" style="width: 100%; position:fixed; bottom:0;  ">
+
+ <!-- <button class="button button-assertive" style="margin-bottom:0px" type="button" ng-click="annuler()" >
+  Annuler 
+</button>
+
+ <button class="button button-positive" style="margin-bottom:0px" type="submit">
+  Exporter 
+</button> -->
+
+
+<div class="button-bar">
+  <button type="button" ng-click="annuler()" class="button button-assertive">Annuler</button>
+  <button type="submit" class="button button-positive">Exporter</button>
+</div>
+
+</div>
+</form>
+
+</div>
+
+    </body>
+</html>

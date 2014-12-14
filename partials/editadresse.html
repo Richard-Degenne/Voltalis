@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="yes" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/header.css" />
+        <link rel="stylesheet" type="text/css" href="css/entry.css" />
+        <link rel="stylesheet" type="text/css" href="css/search.css" />
+        <title>Hello World</title>
+    </head>
+    <body ng-controller="editadresseCtrl">
+  <!-- HEADER -->
+  <div id="header">
+        <a href="" ng-click="retouradresse()" class="button icon-left ion-chevron-left button-clear" style="left: 0; margin-top: 15px; position: absolute; margin-left: 10px;"></a>
+    <span id="menuBarTitle">LOGEMENT</span>
+    <a href="#export" class="ion-archive button-clear" style="right: 0; position: absolute; margin-right: 20px; color: white; font-size: 32px; margin-top: 15px;"></a>
+
+      <div class="col ">
+           <label class="toggle">
+                 
+               <input type="checkbox" ng-model="modeEdit">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+            </label>
+         </div>
+
+
+  </div>
+  <!-- FIN HEADER -->
+
+<div ng-hide="modeEdit" class="card" style="background-color:transparent;">
+
+  <div class="row">
+    <div class="col">
+
+  <div class="item item-divider">
+    Numero
+  </div>
+  <div class="item item-text-wrap">
+    {{adresse.numero}}
+  </div>
+
+ <div class="item item-divider">
+    Doublon
+  </div>
+  <div class="item item-text-wrap">
+     {{adresse.doublon | doublon }} 
+  </div>
+
+   <div class="item item-divider">
+    Complement
+  </div>
+  <div class="item item-text-wrap">
+    {{adresse.complement}}
+  </div>
+ 
+
+ <div class="item item-divider">
+    Collectif
+  </div>
+  <div class="item item-text-wrap">
+    {{adresse.collectif ==='true' ? 'oui' : 'non' }}
+  </div>
+</div>
+
+   <div ng-show="adresse.collectif" class="col col-50">
+<div ng-show="adresse.collectif">
+  
+  <div class="item item-divider">
+    Batiment
+  </div>
+  <div class="item item-text-wrap">
+    {{adresse.batiment}}
+  </div>
+
+  <div class="item item-divider">
+    Digicode
+  </div>
+  <div class="item item-text-wrap">
+    {{adresse.digicode}}
+  </div>
+
+  <div class="item item-divider">
+    Etage
+  </div>
+  <div class="item item-text-wrap">
+    {{adresse.etage}}
+  </div>
+
+  <div class="item item-divider">
+    Appartement
+  </div>
+  <div class="item item-text-wrap">
+    {{adresse.appartement}}
+  </div>
+
+</div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col">
+<div class="item item-divider">
+    Statut
+  </div>
+  <div class="item item-text-wrap">
+    {{adresse.statut  | Statut}}
+  </div>
+</div>
+ <div class="col">
+<div class="item item-divider">
+    Commentaire
+  </div>
+  <div class="item item-text-wrap">
+    {{adresse.commentaire}}
+  </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<form ng-show="modeEdit" ng-submit="update(adresse)">
+
+<div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Numero</span>
+    <input type="number" ng-model="adresse.numero">
+  </label>
+
+<label class="item item-input item-stacked-label">
+<div class="row">
+  <div class="col">
+       <li class="item item-checkbox">
+       <label class="checkbox">
+         <input ng-true-value="bis" ng-false-value="non" ng-model="adresse.doublon" ng-change="checkbis(adresse.doublon)" type="checkbox">
+       </label>
+       Bis
+       </li>
+
+  </div>
+
+   <div class="col">
+       <li class="item item-checkbox">
+       <label class="checkbox">
+         <input ng-true-value="ter" ng-false-value="non" ng-model="adresse.doublon" ng-change="checkbis(adresse.doublon)" type="checkbox">
+       </label>
+       Ter
+       </li>
+
+  </div>
+
+</div>
+</label>
+
+<label class="item item-input item-stacked-label">
+    <span class="input-label">Complement</span>
+    <input type="text" ng-model="adresse.complement">
+</label>
+
+<label class="item item-input item-stacked-label">
+    <span class="input-label" style="margin-right: 40px; vertical-align:top">Logement collectif</span>
+      <label class="toggle">
+       <input type="checkbox" ng-model="adresse.collectif" ng-true-value="true" ng-false-value="false" >
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+    </label>
+  </label>
+
+
+<label ng-show="adresse.collectif" class="item item-input item-stacked-label">
+    <span class="input-label">Batiment</span>
+    <input type="text" ng-model="adresse.batiment">
+</label>
+
+<label class="item item-input item-stacked-label" ng-show="adresse.collectif">
+    <span class="input-label">Digicode</span>
+    <input type="number" ng-model="adresse.digicode">
+</label>
+
+
+<label ng-show="adresse.collectif" class="item item-input item-stacked-label">
+    <span class="input-label">Etage</span>
+    <input type="text" ng-model="adresse.etage">
+</label>
+
+<label ng-show="adresse.collectif" class="item item-input item-stacked-label">
+    <span class="input-label">Appartement</span>
+    <input type="text" ng-model="adresse.appartement">
+</label>
+
+<label class="item item-input item-stacked-label">
+
+    <div class="input-label">
+      Statut
+    </div>
+  
+<select ng-model="adresse.statut" class="houseInput" id="houseStatus" name="houseStatus">
+    <option value="20">Statut logement</option>
+    <option value="0">Absent Elec</option>
+    <option value="1">Rendez-vous pris</option>
+    <option value="2">À recontacter</option>
+    <option value="3">Ko Adhérent</option>
+    <option value="4">Déjà installé</option>
+    <option value="5">Refus argumenté</option>
+    <option value="6">Refus de dialogue</option>
+    <option value="7">Refus locataire</option>
+    <option value="8">Bailleur non autorisé</option>
+    <option value="9">GPRS NOK</option>
+    <option value="10">Vétusté</option>
+    <option value="11">Puissance trop faible</option>
+    <option value="12">Convecteur inéligible</option>
+    <option value="13">Chauffage électrique collectif</option>
+    <option value="14">PAC</option>
+    <option value="15">Manque de place dans Tableau</option>
+    <option value="16">Tableau en hauteur</option>
+    <option value="17">Zone encombrée</option>
+    <option disabled>────────────────</option>
+    <option value="18">Absent/Energie inconnue</option>
+    <option disabled>────────────────</option>
+    <option value="19">Logement non-électrique</option>
+  </select>
+</label>
+  
+<label class="item item-input item-stacked-label">
+    <textarea placeholder="Commentaire" ng-model="adresse.commentaire"></textarea>
+</label>
+
+<div class="row responsive-sm">
+
+
+  <div class="col">
+       <button class="button button-block button-assertive" style="margin-bottom:0px" type="button" ng-click="annuler()" >
+        Annuler 
+      </button>
+</div>
+<div class="col">
+ <button class="button button-block button-positive" style="margin-bottom:0px" type="submit">
+  Editer 
+</button>
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+ 
+
+
+</form>
+
+
+    </body>
+</html>
