@@ -44,10 +44,10 @@
 </form>
 	</div>
 <div style="margin-bottom:52px;">
-	<ul  class="entryList" id="cityList" ng-repeat="adresse in adresses | filter:Sadresse" 
-                  item="adresse" href="" ng-click='selectadresse(adresse.id)'>
-		<li class="entry entryName">
-			<span> {{ adresse.numero  }} {{adresse.complement}} {{adresse.batiment}} {{adresse.etage}}  {{adresse.appartement}}</span>
+	<ul  class="entryList" id="cityList" ng-repeat="adresse in adresses | orderBy:'uid':true | filter:Sadresse | affichage track by $index " 
+                  item="adresse">
+		<li ng-class="getClass(adresse.statut)">
+			<span ng-click='selectadresse(adresse.id)'> {{ adresse | ladresse }}</span>
 
         <div class="entryDelete" ng-click="removeadresse(adresse.id)" ng-show="modeEdit"><i class="icon ion-close-round"></i></div>
         </li>
