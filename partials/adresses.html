@@ -13,11 +13,11 @@
         <title>Voltalis</title>
     </head>
     <body ng-controller="adresseCtrl">
-	<!-- HEADER -->
-	<div id="header">
+  <!-- HEADER -->
+  <div id="header">
         <a href="" ng-click="retourrue()" class="button icon-left ion-chevron-left button-clear" style="left: 0; margin-top: 15px; position: absolute; margin-left: 10px;"></a>
         <a href="#export" class="ion-archive button-clear" style="right: 0; position: absolute; margin-right: 20px; color: white; font-size: 32px; margin-top: 15px;"></a>
-		<span id="menuBarTitle">LOGEMENTS</span>
+    <span id="menuBarTitle">LOGEMENTS</span>
       
          
         <div class="col ">
@@ -30,10 +30,10 @@
             </label>
          </div>
 
-	</div>
-	<!-- FIN HEADER -->
-	<div id="searchBar">
-		<form>
+  </div>
+  <!-- FIN HEADER -->
+  <div id="searchBar">
+    <form>
 <div class="list list-inset"> 
   <label class="item item-input">
     <i class="icon ion-search placeholder-icon"></i>
@@ -42,17 +42,17 @@
   </label>
 </div>
 </form>
-	</div>
+  </div>
 <div style="margin-bottom:52px;">
-	<ul  class="entryList" id="cityList" ng-repeat="adresse in adresses | orderBy:'uid':true | filter:Sadresse | affichage track by $index " 
+  <ul  class="entryList" id="cityList" ng-repeat="adresse in adresses | orderBy:'created':false | filter:Sadresse | affichage track by $index " 
                   item="adresse">
-		<li ng-class="getClass(adresse.statut)">
-			<span ng-click='selectadresse(adresse.id)'> {{ adresse | ladresse }}</span>
+    <li ng-class="getClass(adresse.statut)">
+      <span ng-click='selectadresse(adresse.id)'> {{ adresse | ladresse }}</span>
 
         <div class="entryDelete" ng-click="removeadresse(adresse.id)" ng-show="modeEdit"><i class="icon ion-close-round"></i></div>
         </li>
-		
-	</ul>
+    
+  </ul>
 </div>
 
 <div style="position:fixed;bottom:0;width:100%">
