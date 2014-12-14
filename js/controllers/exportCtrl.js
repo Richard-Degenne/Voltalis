@@ -123,8 +123,7 @@ $scope.db.createTable('adresses', {
     "auto_increment": true // auto increment
   },
    "numero":{
-    "type": "INTEGER",
-    "null": "NOT NULL"
+    "type": "INTEGER"
   },
   "doublon":{
     "type": "STRING"
