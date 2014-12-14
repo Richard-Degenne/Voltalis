@@ -1,0 +1,48 @@
+/*
+ * house.css
+ */
+
+.houseInput,select {
+	font-size:24px;
+}
+
+[type=text],[type=number] {
+	width:100%;
+}
+
+[type=text] + [type=text] {
+	margin-top:10px;
+}
+.divInput,select {
+	width:75%;
+	margin-left:12.5%;
+	margin-top:10px;
+}
+
+#houseCollectiveDiv {
+	display:none;
+}
+
+#houseButtons {
+	width:100%;
+	position:fixed;
+	bottom:0px;
+}
+
+[type=button] {
+	font-size:24px;
+	width:100%;
+	height:40px;
+}
+
+#houseCancel {
+	background-color:#F41A1B;
+}
+
+#houseSaveAndStay {
+	background-color:#F0923D;
+}
+
+#houseSave {
+	background-color:#6CCB62;
+}

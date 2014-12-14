@@ -1,0 +1,14 @@
+/*
+ * search.css
+ */
+
+#searchBar {
+	width:100%;
+	margin-top:10px;
+}
+
+.searchInput {
+	width:75%;
+	margin-left:12.5%;
+	font-size:24px;
+}
