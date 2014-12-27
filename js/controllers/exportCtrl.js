@@ -337,6 +337,6 @@ $scope.annuler= function(){
 
   
 
-}])
+}]);
 
 

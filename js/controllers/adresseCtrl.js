@@ -312,27 +312,14 @@ $scope.db.insert('adresses', {"numero": numero,
       "commentaire": commentaire,
       "rue_id": rue_id,
      "ville_id": ville_id}).then(function(results) {
-  console.log(results.insertId);
+  alert('Logement ajouté avec succès !');
  
 });
 
- // var db = openDatabase('Voltalis', '1.0', 'database', 2000000);
- //  db.transaction(function(tx) {
- //    tx.executeSql('INSERT INTO villes (Commune, Codepos) VALUES (?, ?)',[value.Commune,value.Codepos]);
- //  });
-         // $scope.adresses.push(settings);
-          //$scope.adresse = null;
-          
-            // City.save(value).then(function (city) {
-            //     $scope.$apply(function () {
-            //         $scope.newTodo.Commune = null;
-            //         $scope.villes.push(city);
-            //     });
-            // });
-       
 
 
-}
+
+};
 
 $scope.saveandgoback= function(adresse){
 // var earl = '/adresses/';

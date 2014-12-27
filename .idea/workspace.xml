@@ -4,21 +4,8 @@
     <list default="true" id="feeb0ccd-0071-4a4a-88e0-e4ebda2e18c2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/addadresse.html" afterPath="$PROJECT_DIR$/partials/addadresse.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/adresseCtrl.js" afterPath="$PROJECT_DIR$/js/controllers/adresseCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/adresses.html" afterPath="$PROJECT_DIR$/partials/adresses.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/city.html" afterPath="$PROJECT_DIR$/partials/city.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/editadresse.html" afterPath="$PROJECT_DIR$/partials/editadresse.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/editadresseCtrl.js" afterPath="$PROJECT_DIR$/js/controllers/editadresseCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/editrue.html" afterPath="$PROJECT_DIR$/partials/editrue.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/editville.html" afterPath="$PROJECT_DIR$/partials/editville.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/entry.css" afterPath="$PROJECT_DIR$/css/entry.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/export.html" afterPath="$PROJECT_DIR$/partials/export.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/exportCtrl.js" afterPath="$PROJECT_DIR$/js/controllers/exportCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/tpl/loginpage.tpl.html" afterPath="$PROJECT_DIR$/partials/tpl/loginpage.tpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/rueCtrl.js" afterPath="$PROJECT_DIR$/js/controllers/rueCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/rues.html" afterPath="$PROJECT_DIR$/partials/rues.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/villeCtrl.js" afterPath="$PROJECT_DIR$/js/controllers/villeCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/websql.min.js" afterPath="$PROJECT_DIR$/js/services/websql.min.js" />
     </list>
     <ignored path="Voltalis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,25 +29,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="editville.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/partials/editville.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="918">
-              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="export.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="export.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/partials/export.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38112524" vertical-offset="11" max-vertical-offset="799">
+            <state vertical-scroll-proportion="-3.8888888" vertical-offset="11" max-vertical-offset="799">
               <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addadresse.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/partials/addadresse.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="2737">
+              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adresseCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controllers/adresseCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="4219" max-vertical-offset="7089">
+              <caret line="302" column="16" selection-start-line="302" selection-start-column="13" selection-end-line="302" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,8 +75,28 @@
       <file leaf-file-name="exportCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllers/exportCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.857143" vertical-offset="4840" max-vertical-offset="5916">
-              <caret line="296" column="17" selection-start-line="296" selection-start-column="11" selection-end-line="296" selection-end-column="17" />
+            <state vertical-scroll-proportion="-6.857143" vertical-offset="709" max-vertical-offset="5916">
+              <caret line="53" column="205" selection-start-line="53" selection-start-column="205" selection-end-line="53" selection-end-column="205" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="websql.min.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/services/websql.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8232236" vertical-offset="1531" max-vertical-offset="2108">
+              <caret line="118" column="4" selection-start-line="118" selection-start-column="4" selection-end-line="118" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="exportCtrlv1.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controllers/exportCtrlv1.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2448" max-vertical-offset="4471">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -115,36 +132,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginpage.tpl.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/partials/tpl/loginpage.tpl.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="357">
-              <caret line="1" column="4" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rues.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/partials/rues.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.384615" vertical-offset="306" max-vertical-offset="935">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/partials/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="153">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -155,20 +142,21 @@
       <list>
         <option value="$PROJECT_DIR$/partials/city.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/partials/addadresse.html" />
         <option value="$PROJECT_DIR$/js/controllers/editadresseCtrl.js" />
         <option value="$PROJECT_DIR$/js/controllers/villeCtrl.js" />
         <option value="$PROJECT_DIR$/js/controllers/rueCtrl.js" />
         <option value="$PROJECT_DIR$/css/entry.css" />
         <option value="$PROJECT_DIR$/partials/adresses.html" />
-        <option value="$PROJECT_DIR$/js/controllers/adresseCtrl.js" />
         <option value="$PROJECT_DIR$/partials/editrue.html" />
         <option value="$PROJECT_DIR$/partials/editadresse.html" />
         <option value="$PROJECT_DIR$/partials/editville.html" />
         <option value="$PROJECT_DIR$/partials/tpl/loginpage.tpl.html" />
         <option value="$PROJECT_DIR$/partials/rues.html" />
-        <option value="$PROJECT_DIR$/js/controllers/exportCtrl.js" />
         <option value="$PROJECT_DIR$/partials/export.html" />
+        <option value="$PROJECT_DIR$/partials/addadresse.html" />
+        <option value="$PROJECT_DIR$/js/controllers/adresseCtrl.js" />
+        <option value="$PROJECT_DIR$/js/controllers/exportCtrl.js" />
+        <option value="$PROJECT_DIR$/js/services/websql.min.js" />
       </list>
     </option>
   </component>
@@ -247,6 +235,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Voltalis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Voltalis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -343,7 +349,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881355" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -419,14 +425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partials/addadresse.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.730769" vertical-offset="2158" max-vertical-offset="2737">
-          <caret line="151" column="7" selection-start-line="151" selection-start-column="7" selection-end-line="151" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers/rueCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-112.32143" vertical-offset="0" max-vertical-offset="4182">
@@ -467,14 +465,6 @@
             <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/adresseCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.142858" vertical-offset="5860" max-vertical-offset="7310">
-          <caret line="368" column="8" selection-start-line="368" selection-start-column="8" selection-end-line="368" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -558,22 +548,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/exportCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.857143" vertical-offset="4840" max-vertical-offset="5916">
-          <caret line="296" column="17" selection-start-line="296" selection-start-column="11" selection-end-line="296" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/partials/export.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38112524" vertical-offset="11" max-vertical-offset="799">
+        <state vertical-scroll-proportion="-3.8888888" vertical-offset="11" max-vertical-offset="799">
           <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/addadresse.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="2737">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/exportCtrlv1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4471">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/exportCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.857143" vertical-offset="709" max-vertical-offset="5916">
+          <caret line="53" column="205" selection-start-line="53" selection-start-column="205" selection-end-line="53" selection-end-column="205" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/adresseCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4219" max-vertical-offset="7089">
+          <caret line="302" column="16" selection-start-line="302" selection-start-column="13" selection-end-line="302" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/websql.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8232236" vertical-offset="1531" max-vertical-offset="2108">
+          <caret line="118" column="4" selection-start-line="118" selection-start-column="4" selection-end-line="118" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>

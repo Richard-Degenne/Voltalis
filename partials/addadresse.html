@@ -80,11 +80,14 @@
 <label class="item item-input item-stacked-label">
 
     <div class="input-label">
-      Statut
+      Statut Logement
     </div>
   
 <select ng-model="adresse.statut" class="houseInput" id="houseStatus" name="houseStatus">
-    <option value="20">Statut logement</option>
+    <option value="18">Absent/Energie inconnue</option>
+    <option disabled>────────────────</option>
+    <option value="19">Logement non-électrique</option>
+    <option disabled>────────────────</option>
     <option value="0">Absent Elec</option>
     <option value="1">Rendez-vous pris</option>
     <option value="2">À recontacter</option>
@@ -103,10 +106,7 @@
     <option value="15">Manque de place dans Tableau</option>
     <option value="16">Tableau en hauteur</option>
     <option value="17">Zone encombrée</option>
-    <option disabled>────────────────</option>
-    <option value="18">Absent/Energie inconnue</option>
-    <option disabled>────────────────</option>
-    <option value="19">Logement non-électrique</option>
+
   </select>
 </label>
   
