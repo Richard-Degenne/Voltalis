@@ -21,6 +21,16 @@ app.filter('affichage', function() {
           }
       });
 
+       function compare(a,b) {
+           if (a.numero < b.numero)
+               return -1;
+           if (a.numero > b.numero)
+               return 1;
+           return 0;
+       }
+
+       output.sort(compare);
+
       return output;
    };
 });
@@ -30,7 +40,7 @@ app.filter('ladresse', function() {
     var titre = "";
 
     if (adresse.collectif == "true"){
-      titre = "Bat "+ adresse.batiment + " Etage " + adresse.etage + " Apt " + adresse.appartement;
+      titre = "N° " + adresse.numero + " - Bat "+ adresse.batiment + " Etage " + adresse.etage + " Apt " + adresse.appartement;
       
     }else{
       if ((adresse.doublon === "non") || (adresse.doublon == 0 ) ){
@@ -73,7 +83,7 @@ $scope.db.createTable('adresses', {
     "auto_increment": true // auto increment
   },
    "numero":{
-    "type": "INTEGER",
+    "type": "INTEGER"
   },
   "doublon":{
     "type": "INTEGER"
@@ -82,23 +92,23 @@ $scope.db.createTable('adresses', {
     "type": "INTEGER"
   },
   "complement":{
-    "type": "STRING",
+    "type": "STRING"
   },
   "collectif":{
     "type": "boolean", 
-    "default": 0,
+    "default": 0
   },
   "batiment":{
-    "type": "STRING",
+    "type": "STRING"
   },
   "digicode":{
-    "type": "INTEGER",
+    "type": "INTEGER"
   },
   "etage":{
-    "type": "STRING",
+    "type": "STRING"
   },
   "appartement":{
-    "type": "STRING",
+    "type": "STRING"
   },
   "statut":{
     "type": "INTEGER"
@@ -120,7 +130,7 @@ $scope.db.createTable('adresses', {
     "default": "CURRENT_TIMESTAMP" // default value
   }
 });
-}
+};
 
 
 initDB();
@@ -338,37 +348,30 @@ $scope.editadresse = function(id){
 }
 
 
-// remove une ville 
-$scope.removeadresse= function(id){
+// remove une adresse
+$scope.removeadresse= function(uid) {
+    var confirmation = confirm("Êtes-vous sûr?");
+    if (confirmation == true) {
 
-	var removeByAttr = function(arr, attr, value){
-    var i = arr.length;
-    while(i--){
-       if( arr[i] 
-           && arr[i].hasOwnProperty(attr) 
-           && (arguments.length > 2 && arr[i][attr] === value ) ){ 
+        var removeByAttr = function (arr, attr, value) {
+            var i = arr.length;
+            while (i--) {
+                if (arr[i]
+                    && arr[i].hasOwnProperty(attr)
+                    && (arguments.length > 2 && arr[i][attr] === value )) {
 
-           arr.splice(i,1);
+                    arr.splice(i, 1);
 
-       }
-    }
-    return arr;
-}
+                }
+            }
+            return arr;
+        };
 
-	console.log(id);
-$scope.db.del("adresses", {"id": id});
-          
-            // City.save(value).then(function (city) {
-            //     $scope.$apply(function () {
-            //         $scope.newTodo.Commune = null;
-            //         $scope.villes.push(city);
-            //     });
-            // });
-       //$scope.villes = getVilles();
-   //    $rootscope.apply();
-removeByAttr($scope.adresses, 'id', id);
+        $scope.db.del("adresses", {"uid": uid});
+        removeByAttr($scope.adresses, 'uid', uid);
 //getVilles();
-}
+    }
+};
 ///
 
 
@@ -376,7 +379,7 @@ $scope.selectadresse= function(value){
     UserService.model.adresse = value;
     var earl = '/adresse/' + value;
     $location.path(earl);
-	  
+
 
 }
 

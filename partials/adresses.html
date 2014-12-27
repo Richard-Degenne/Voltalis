@@ -1,18 +1,5 @@
-<!DOCTYPE html>
 
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="yes" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="css/header.css" />
-        <link rel="stylesheet" type="text/css" href="css/entry.css" />
-        <link rel="stylesheet" type="text/css" href="css/search.css" />
-        <title>Voltalis</title>
-    </head>
-    <body ng-controller="adresseCtrl">
+    <div ng-controller="adresseCtrl">
   <!-- HEADER -->
   <div id="header">
         <a href="" ng-click="retourrue()" class="button icon-left ion-chevron-left button-clear" style="left: 0; margin-top: 15px; position: absolute; margin-left: 10px;"></a>
@@ -44,12 +31,12 @@
 </form>
   </div>
 <div style="margin-bottom:52px;">
-  <ul  class="entryList" id="cityList" ng-repeat="adresse in adresses | orderBy:'created':false | filter:Sadresse | affichage track by $index " 
+  <ul  class="entryList" id="cityList" ng-repeat="adresse in adresses | orderBy:'created':false | filter:{numero:Sadresse} | affichage track by $index"
                   item="adresse">
     <li ng-class="getClass(adresse.statut)">
       <span ng-click='selectadresse(adresse.id)'> {{ adresse | ladresse }}</span>
 
-        <div class="entryDelete" ng-click="removeadresse(adresse.id)" ng-show="modeEdit"><i class="icon ion-close-round"></i></div>
+        <div class="entryDelete" ng-click="removeadresse(adresse.uid)" ng-show="modeEdit"><i class="icon ion-close-round"></i></div>
         </li>
     
   </ul>
@@ -60,5 +47,4 @@
   Ajouter 
 </button>
 </div>
-    </body>
-</html>
+    </div>

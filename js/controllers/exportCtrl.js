@@ -65,7 +65,7 @@ var ville = " ";
  }];
  $scope.villes = [];
  $scope.adresses = [];
-
+    $scope.csv = 'Les dates doivent être sous la forme: AAAA-MM-JJ ';
 
 
 $scope.initDB = function(){
@@ -179,7 +179,7 @@ $scope.db.createTable('adresses', {
 
 
 
-}
+};
 
 
 $scope.initDB();
@@ -197,7 +197,7 @@ $scope.initDB();
   }
   $scope.adresse = angular.copy($scope.adresse2[0]);
 
-})
+});
 
 
 
@@ -205,6 +205,7 @@ $scope.initDB();
 
 
 $scope.exporting= function(){
+
   var debut = String($scope.exporte.debut);
   var fin = String($scope.exporte.fin);
   var file_name = debut +"_"+ fin + ".csv";
@@ -289,8 +290,26 @@ cordovaReady(window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory
 
 
 
-}
+};
 
+    $scope.datePattern=/^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$/i;
+    $scope.errorMsg='';
+    $scope.validation=function(aForm){
+        //console.log(aForm)
+        if(aForm.debut.$error.pattern || aForm.fin.$error.pattern )
+            $scope.errorMsg='La date doit s\'écrit sous la forme : AAAA-MM-JJ ';
+        else{
+            if(aForm.$invalid)
+                $scope.errorMsg='Il faut remplir tous les champs';
+            else//valid
+            {
+                $scope.errorMsg='';
+                $scope.exporting();
+
+
+            }
+        }
+    };
 
 $scope.retourville= function(){
 var earl = '/villes/';

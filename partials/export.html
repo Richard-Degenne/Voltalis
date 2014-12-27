@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="yes" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="css/header.css" />
-        <link rel="stylesheet" type="text/css" href="css/entry.css" />
-        <link rel="stylesheet" type="text/css" href="css/search.css" />
-        <title>Voltalis</title>
-    </head>
-    <body ng-controller="exportCtrl">
+<div ng-controller="exportCtrl" xmlns="http://www.w3.org/1999/html">
 	<!-- HEADER -->
 	<div id="header">
         <a href="" ng-click="retourville()" class="button icon-left ion-chevron-left button-clear" style="left: 0; margin-top: 15px; position: absolute; margin-left: 10px;"></a>
@@ -21,40 +7,36 @@
   
 	</div>
 	<!-- FIN HEADER -->
-{{csv}}
-<form ng-submit="exporting()">
+
+    <div class="list list-inset">
+        <div class="item" style="background-color: #f3f3f3; text-align: center">
+            <h2> {{csv}} </h2> <br> <p style="color:red">{{errorMsg}}</p>
+        </div>
+    </div>
+<form name="exp">
 <div class="list">
   <label class="item item-input item-stacked-label">
     <span class="input-label">Date de début</span>
-    <input type="text" ng-model="exporte.debut">
+    <input type="text" placeholder="AAAA-MM-JJ" name="debut" ng-model="exporte.debut" ng-pattern='datePattern' required>
   </label>
 
   <label class="item item-input item-stacked-label">
     <span class="input-label">Date de fin</span>
-    <input type="text" ng-model="exporte.fin">
+    <input type="text" placeholder="AAAA-MM-JJ" name="fin" ng-model="exporte.fin" ng-pattern='datePattern' required>
   </label>
+<br>
 
 
 <div class="row" style="width: 100%; position:fixed; bottom:0;  ">
 
- <!-- <button class="button button-assertive" style="margin-bottom:0px" type="button" ng-click="annuler()" >
-  Annuler 
-</button>
-
- <button class="button button-positive" style="margin-bottom:0px" type="submit">
-  Exporter 
-</button> -->
-
-
 <div class="button-bar">
   <button type="button" ng-click="annuler()" class="button button-assertive">Annuler</button>
-  <button type="submit" class="button button-positive">Exporter</button>
+  <button type="button" ng-click="validation(exp)" class="button button-positive">Exporter</button>
 </div>
+
+</div>
+
 
 </div>
 </form>
-
 </div>
-
-    </body>
-</html>

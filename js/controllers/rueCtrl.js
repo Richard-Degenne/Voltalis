@@ -26,7 +26,7 @@ $scope.db.createTable('rues', {
     "null": "NOT NULL"
   }
 });
-}
+};
 
 
 initDB();
@@ -80,7 +80,7 @@ $scope.db.select("rues", {
   for(var i=0; i < results.rows.length; i++){
     $scope.rues.push(results.rows.item(i));
   }
-})
+});
 
 	// ($.get( "data/light.json", function( data ) {
 	// 		var results= [];
@@ -125,7 +125,7 @@ $scope.db.select("rues", {
  //  });
 
 
-}
+};
 
 // $scope.villes = getVilles();
 
@@ -138,7 +138,7 @@ $scope.addrue= function(value){
 $scope.db.insert('rues', {"nom": value.nom, "ville": UserService.model.ville}).then(function(results) {
   console.log(results.insertId);
   value.id=results.insertId;
-})
+});
 
  // var db = openDatabase('Voltalis', '1.0', 'database', 2000000);
  //  db.transaction(function(tx) {
@@ -156,46 +156,38 @@ $scope.db.insert('rues', {"nom": value.nom, "ville": UserService.model.ville}).t
        
 
 
-}
+};
 
 
 $scope.editrue = function(id){
     var earl = '/rue/' + id;
     $location.path(earl);
-}
+};
 
 
 // remove une ville 
 $scope.removerue= function(id){
+    var confirmation = confirm("Êtes-vous sûr?");
+    if (confirmation == true ) {
 
-	var removeByAttr = function(arr, attr, value){
-    var i = arr.length;
-    while(i--){
-       if( arr[i] 
-           && arr[i].hasOwnProperty(attr) 
-           && (arguments.length > 2 && arr[i][attr] === value ) ){ 
+	var removeByAttr = function(arr, attr, value) {
+        var i = arr.length;
+        while (i--) {
+            if (arr[i]
+                && arr[i].hasOwnProperty(attr)
+                && (arguments.length > 2 && arr[i][attr] === value )) {
 
-           arr.splice(i,1);
+                arr.splice(i, 1);
 
-       }
-    }
-    return arr;
-}
+            }
+        }
+        return arr;
+    };
 
-	console.log(id);
 $scope.db.del("rues", {"id": id});
-          
-            // City.save(value).then(function (city) {
-            //     $scope.$apply(function () {
-            //         $scope.newTodo.Commune = null;
-            //         $scope.villes.push(city);
-            //     });
-            // });
-       //$scope.villes = getVilles();
-   //    $rootscope.apply();
 removeByAttr($scope.rues, 'id', id);
-//getVilles();
-}
+    }
+};
 ///
 
 
@@ -205,7 +197,7 @@ $scope.selectrue= function(value){
     $location.path(earl);
 	  
 
-}
+};
 
 
 	$scope.rechercher = function(){
@@ -243,6 +235,6 @@ return results;
  $scope.rues = getRues();
 	
 
-}])
+}]);
 
 

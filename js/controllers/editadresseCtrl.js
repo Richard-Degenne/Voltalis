@@ -91,7 +91,7 @@ app.controller('editadresseCtrl', ['$scope','$routeParams','loginService','UserS
 
  $scope.adresse2 = [];
  $scope.newadresse = [];
- $scope.modeEdit = false;
+ $scope.modeEdit = true;
  $scope.adresse_id = $routeParams.id;
 var initDB = function(){
   $scope.db = $webSql.openDatabase('Voltalis', '1.0', 'database', 2000000); 

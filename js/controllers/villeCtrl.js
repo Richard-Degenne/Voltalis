@@ -129,35 +129,25 @@ $scope.db.selectAll("villes").then(function(results) {
 
 }
 
-// $scope.villes = getVilles();
 
-$scope.addville= function(value){
-	//$scope.villes.push(value);
+    $scope.addville= function(value){
+
 	$scope.model.ville = value.Commune;
-	value.Codepos = prompt("postalcode ? ", "");
+	value.Codepos = prompt("N° de département :", "");
 
-$scope.db.insert('villes', {"Commune": value.Commune, "Codepos": value.Codepos}).then(function(results) {
-  console.log(results.insertId);
-  value.id=results.insertId;
-})
+    if (value.Codepos === "" || value.Codepos === null ) {
+        // do nothing
+    }else{
+        $scope.db.insert('villes', {"Commune": value.Commune, "Codepos": value.Codepos}).then(function(results) {
+            console.log(results.insertId);
+            value.id=results.insertId;
+        });
 
- // var db = openDatabase('Voltalis', '1.0', 'database', 2000000);
- //  db.transaction(function(tx) {
- //    tx.executeSql('INSERT INTO villes (Commune, Codepos) VALUES (?, ?)',[value.Commune,value.Codepos]);
- //  });
-          $scope.villes.push(value);
-          $scope.newTodo = null;
-          
-            // City.save(value).then(function (city) {
-            //     $scope.$apply(function () {
-            //         $scope.newTodo.Commune = null;
-            //         $scope.villes.push(city);
-            //     });
-            // });
-       
+        $scope.villes.push(value);
+        $scope.newTodo = null;
+    }
 
-
-}
+};
 
 
 $scope.editville = function(id){
@@ -166,38 +156,33 @@ $scope.editville = function(id){
 }
 
 
-// remove une ville 
-$scope.removeville= function(id){
+    // remove une ville
+    $scope.removeville= function(id){
+     var confirmation = confirm("Êtes-vous sûr?");
+    if (confirmation == true ) {
 
-	var removeByAttr = function(arr, attr, value){
-    var i = arr.length;
-    while(i--){
-       if( arr[i] 
-           && arr[i].hasOwnProperty(attr) 
-           && (arguments.length > 2 && arr[i][attr] === value ) ){ 
+        var removeByAttr = function (arr, attr, value) {
+            var i = arr.length;
+            while (i--) {
+                if (arr[i]
+                    && arr[i].hasOwnProperty(attr)
+                    && (arguments.length > 2 && arr[i][attr] === value )) {
 
-           arr.splice(i,1);
+                    arr.splice(i, 1);
 
-       }
+                }
+            }
+            return arr;
+        };
+
+        $scope.db.del("villes", {"id": id});
+        removeByAttr($scope.villes, 'id', id);
+
+    }else {
+    // do nothing
     }
-    return arr;
-}
+};
 
-	console.log(id);
-$scope.db.del("villes", {"id": id});
-          
-            // City.save(value).then(function (city) {
-            //     $scope.$apply(function () {
-            //         $scope.newTodo.Commune = null;
-            //         $scope.villes.push(city);
-            //     });
-            // });
-       //$scope.villes = getVilles();
-   //    $rootscope.apply();
-removeByAttr($scope.villes, 'id', id);
-//getVilles();
-}
-///
 
 
 $scope.selectville= function(id){
