@@ -1,64 +1,57 @@
-<!DOCTYPE html>
+<div ng-controller="AdresseController">
+    <!-- HEADER -->
+    <div id="header">
+        <a href="" ng-click="retourrue()" class="button icon-left ion-chevron-left button-clear"
+           style="left: 0; margin-top: 15px; position: absolute; margin-left: 10px;"></a>
+        <a href="#export" class="ion-archive button-clear"
+           style="right: 0; position: absolute; margin-right: 20px; color: white; font-size: 32px; margin-top: 15px;"></a>
+        <span id="menuBarTitle">LOGEMENTS</span>
 
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="yes" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="css/header.css" />
-        <link rel="stylesheet" type="text/css" href="css/entry.css" />
-        <link rel="stylesheet" type="text/css" href="css/search.css" />
-        <title>Voltalis</title>
-    </head>
-    <body ng-controller="adresseCtrl">
-  <!-- HEADER -->
-  <div id="header">
-        <a href="" ng-click="retourrue()" class="button icon-left ion-chevron-left button-clear" style="left: 0; margin-top: 15px; position: absolute; margin-left: 10px;"></a>
-        <a href="#export" class="ion-archive button-clear" style="right: 0; position: absolute; margin-right: 20px; color: white; font-size: 32px; margin-top: 15px;"></a>
-    <span id="menuBarTitle">LOGEMENTS</span>
-      
-         
+
         <div class="col ">
-           <label class="toggle">
-                 
-               <input type="checkbox" ng-model="modeEdit">
-               <div class="track">
-                 <div class="handle"></div>
-               </div>
+            <label class="toggle">
+
+                <input type="checkbox" ng-model="modeEdit">
+
+                <div class="track">
+                    <div class="handle"></div>
+                </div>
             </label>
-         </div>
+        </div>
 
-  </div>
-  <!-- FIN HEADER -->
-  <div id="searchBar">
-    <form>
-<div class="list list-inset"> 
-  <label class="item item-input">
-    <i class="icon ion-search placeholder-icon"></i>
-    <input type="text" placeholder="Adresse" ng-model="Sadresse" ng-value="Sadresse">
-    <!-- <button ng-hide="newTodo.Commune" class="button button-small" type="submit">Rechercher !</button> -->
-  </label>
-</div>
-</form>
-  </div>
-<div style="margin-bottom:52px;">
-  <ul  class="entryList" id="cityList" ng-repeat="adresse in adresses | orderBy:'created':false | filter:Sadresse | affichage track by $index " 
-                  item="adresse">
-    <li ng-class="getClass(adresse.statut)">
-      <span ng-click='selectadresse(adresse.id)'> {{ adresse | ladresse }}</span>
+    </div>
+    <!-- FIN HEADER -->
+    <div id="searchBar">
+        <form>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="Adresse" ng-model="Sadresse" ng-value="Sadresse">
+                    <!-- <button ng-hide="newTodo.Commune" class="button button-small" type="submit">Rechercher !</button> -->
+                </label>
+            </div>
+        </form>
+    </div>
+    <div style="margin-bottom:52px;">
+        <ul>
 
-        <div class="entryDelete" ng-click="removeadresse(adresse.id)" ng-show="modeEdit"><i class="icon ion-close-round"></i></div>
-        </li>
-    
-  </ul>
-</div>
+            <li class="entryList" id="cityList" ng-repeat="adresse in adresses | orderBy:'created':false | filter:{numero:Sadresse} | affichage track by $index">
+                <div ng-class="getClass(adresse.statut)">
+                    <span ng-click='selectadresse(adresse.id)'> {{ adresse | ladresse }}</span>
 
-<div style="position:fixed;bottom:0;width:100%">
-  <button class="button button-block button-positive" style="margin-bottom:0px" href="" ng-click="createadresse()">
-  Ajouter 
-</button>
+                    <div class="entryDelete" ng-click="removeadresse(adresse.uid)" ng-show="modeEdit"><i class="icon ion-close-round"></i></div>
+                </div>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div style="position:fixed;bottom:0;width:100%">
+        <button class="button button-block button-positive" style="margin-bottom:0px" href=""
+                ng-click="createadresse()">
+            Ajouter
+        </button>
+    </div>
 </div>
-    </body>
-</html>
