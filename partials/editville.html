@@ -1,48 +1,50 @@
-<div ng-controller="editvilleCtrl">
-  <!-- HEADER -->
-  <div id="header">
-        <a href="" ng-click="retourvilles()" class="button icon-left ion-chevron-left button-clear" style="left: 0; margin-top: 15px; position: absolute; margin-left: 10px;"></a>
-    <span id="menuBarTitle">EDITION VILLE</span>
-
-
-  </div>
-  <!-- FIN HEADER -->
-
-
-<form  ng-submit="update(ville)">
-
-<div class="list">
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">nom</span>
-    <input type="text" ng-model="ville.Commune">
-  </label>
-
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Code postal</span>
-    <input type="text" ng-model="ville.Codepos">
-  </label>
-
-
-
-<div class="row responsive-sm" style="width: 100%; position:fixed; bottom:0;  ">
-
-  <div class="col">
-     <button class="button button-block button-assertive" style="margin-bottom:0px" type="button" ng-click="annuler()" >
-      Annuler 
-    </button>
-  </div>
-
-  <div class="col">
-       <button class="button button-block button-positive" style="margin-bottom:0px" type="submit"> Enregistrer
-      </button>
-  </div>
-</div>
-
-</div>
-
-
-</form>
+<div ng-controller="EditvilleController">
+    <!-- HEADER -->
+    <div id="header">
+        <a href="" ng-click="retourvilles()" class="button icon-left ion-chevron-left button-clear"
+           style="left: 0; margin-top: 15px; position: absolute; margin-left: 10px;"></a>
+        <span id="menuBarTitle">EDITION VILLE</span>
 
 
     </div>
+    <!-- FIN HEADER -->
+
+
+    <form ng-submit="update(ville)">
+
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">nom</span>
+                <input type="text" ng-model="ville.Commune">
+            </label>
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Code postal</span>
+                <input type="text" ng-model="ville.Codepos">
+            </label>
+
+
+            <div class="row responsive-sm" style="width: 100%; position:fixed; bottom:0;  ">
+
+                <div class="col">
+                    <button class="button button-block button-assertive" style="margin-bottom:0px" type="button"
+                            ng-click="annuler()">
+                        Annuler
+                    </button>
+                </div>
+
+                <div class="col">
+                    <button class="button button-block button-positive" style="margin-bottom:0px" type="submit">
+                        Enregistrer
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+    </form>
+
+
+</div>
 

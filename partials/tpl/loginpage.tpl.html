@@ -1,16 +1,16 @@
-
 <div class="list list-inset">
-  <form role="form" name="form1">
-  <label class="item item-input">
-    <input type="text" placeholder="pseudo"  ng-model="user.mail" required>
-  </label>
-  <label class="item item-input">
-    <input type="text" placeholder="pass" ng-model="user.pass" required>
-  </label>
-</br>
-<button class="button button-block button-positive" type="submit" ng-click="login(user)" ng-disabled="form1.$invalid">
-  ok !
-</button>
-<p>{{msgtxt}}</p>
-</form>
+    <form role="form" name="form1">
+        <label class="item item-input">
+            <input type="text" placeholder="pseudo" ng-model="user.mail" required>
+        </label>
+        <label class="item item-input">
+            <input type="text" placeholder="pass" ng-model="user.pass" required>
+        </label>
+        </br>
+        <button class="button button-block button-positive" type="submit" ng-click="login(user)"
+                ng-disabled="form1.$invalid">
+            ok !
+        </button>
+        <p>{{msgtxt}}</p>
+    </form>
 </div>

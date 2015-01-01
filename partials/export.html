@@ -1,42 +1,47 @@
-<div ng-controller="exportCtrl" xmlns="http://www.w3.org/1999/html">
-	<!-- HEADER -->
-	<div id="header">
-        <a href="" ng-click="retourville()" class="button icon-left ion-chevron-left button-clear" style="left: 0; margin-top: 15px; position: absolute; margin-left: 10px;"></a>
-		<span id="menuBarTitle">EXPORT</span>
-      
-  
-	</div>
-	<!-- FIN HEADER -->
+<div ng-controller="ExportController" xmlns="http://www.w3.org/1999/html">
+    <!-- HEADER -->
+    <div id="header">
+        <a href="" ng-click="retourville()" class="button icon-left ion-chevron-left button-clear"
+           style="left: 0; margin-top: 15px; position: absolute; margin-left: 10px;"></a>
+        <span id="menuBarTitle">EXPORT</span>
+
+
+    </div>
+    <!-- FIN HEADER -->
 
     <div class="list list-inset">
         <div class="item" style="background-color: #f3f3f3; text-align: center">
-            <h2> {{csv}} </h2> <br> <p style="color:red">{{errorMsg}}</p>
+            <h2> {{csv}} </h2> <br>
+
+            <p style="color:red">{{errorMsg}}</p>
         </div>
     </div>
-<form name="exp">
-<div class="list">
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Date de début</span>
-    <input type="text" placeholder="AAAA-MM-JJ" name="debut" ng-model="exporte.debut" ng-pattern='datePattern' required>
-  </label>
+    <form name="exp">
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Date de début</span>
+                <input type="text" placeholder="AAAA-MM-JJ" name="debut" ng-model="exporte.debut"
+                       ng-pattern='datePattern' required>
+            </label>
 
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Date de fin</span>
-    <input type="text" placeholder="AAAA-MM-JJ" name="fin" ng-model="exporte.fin" ng-pattern='datePattern' required>
-  </label>
-<br>
-
-
-<div class="row" style="width: 100%; position:fixed; bottom:0;  ">
-
-<div class="button-bar">
-  <button type="button" ng-click="annuler()" class="button button-assertive">Annuler</button>
-  <button type="button" ng-click="validation(exp)" class="button button-positive">Exporter</button>
-</div>
-
-</div>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Date de fin</span>
+                <input type="text" placeholder="AAAA-MM-JJ" name="fin" ng-model="exporte.fin" ng-pattern='datePattern'
+                       required>
+            </label>
+            <br>
 
 
-</div>
-</form>
+            <div class="row" style="width: 100%; position:fixed; bottom:0;  ">
+
+                <div class="button-bar">
+                    <button type="button" ng-click="annuler()" class="button button-assertive">Annuler</button>
+                    <button type="button" ng-click="validation(exp)" class="button button-positive">Exporter</button>
+                </div>
+
+            </div>
+
+
+        </div>
+    </form>
 </div>
