@@ -2,7 +2,7 @@
     <!-- HEADER -->
     <div id="header">
 
-        <span id="menuBarTitle">AJOUTE LOGEMENT</span>
+        <span id="menuBarTitle">Nouveau</span>
 
     </div>
     <!-- FIN HEADER -->
@@ -11,7 +11,7 @@
 
         <div class="list">
             <label class="item item-input item-stacked-label">
-                <span class="input-label">Numero</span>
+                <span class="input-label">Numéro</span>
                 <input type="number" ng-model="adresse.numero">
             </label>
 
@@ -43,7 +43,7 @@
             </label>
 
             <label class="item item-input item-stacked-label">
-                <span class="input-label">Complement</span>
+                <span class="input-label">Complément d'adresse</span>
                 <input type="text" ng-model="adresse.complement">
             </label>
 
@@ -60,7 +60,7 @@
 
 
             <label ng-show="adresse.collectif" class="item item-input item-stacked-label">
-                <span class="input-label">Batiment</span>
+                <span class="input-label">Bâtiment</span>
                 <input type="text" ng-model="adresse.batiment">
             </label>
 
@@ -71,7 +71,7 @@
 
 
             <label ng-show="adresse.collectif" class="item item-input item-stacked-label">
-                <span class="input-label">Etage</span>
+                <span class="input-label">Étage</span>
                 <input type="number" ng-model="adresse.etage">
             </label>
 
@@ -83,10 +83,10 @@
             <label class="item item-input item-stacked-label">
 
                 <div class="input-label">
-                    Statut Logement
+                    Statut logement
                 </div>
 
-                <select ng-model="adresse.statut" class="houseInput" id="houseStatus" name="houseStatus">
+                <select ng-model="adresse.statut" class="houseInput" id="houseStatus" name="houseStatus" style="height:30px;">
                     <option value="18">Absent/Energie inconnue</option>
                     <option disabled>────────────────</option>
                     <option value="19">Logement non-électrique</option>
@@ -122,7 +122,7 @@
 
 
                 <div class="col">
-                    <button class="button button-block button-assertive" style="margin-bottom:0px" type="button"
+                    <button class="button button-block button-assertive" style="margin-bottom:0px" type="button" style="font-size:14px;"
                             ng-click="annuler()">
                         Annuler
                     </button>
@@ -130,14 +130,14 @@
 
 
                 <div class="col">
-                    <button class="button button-block button-energized" style="margin-bottom:0px" type="button"
+                    <button class="button button-block button-energized" style="margin-bottom:0px" type="button" style="font-size:14px;"
                             ng-click="saveandstay(adresse)">
                         Enregistrer et rester
                     </button>
                 </div>
 
                 <div class="col">
-                    <button class="button button-block button-positive" style="margin-bottom:0px" type="button"
+                    <button class="button button-block button-positive" style="margin-bottom:0px" type="button" style="font-size:14px;"
                             ng-click="saveandgoback(adresse)">
                         Enregistrer
                     </button>

@@ -20,13 +20,13 @@
         <div class="list">
             <label class="item item-input item-stacked-label">
                 <span class="input-label">Date de début</span>
-                <input type="text" placeholder="AAAA-MM-JJ" name="debut" ng-model="exporte.debut"
+                <input type="text" placeholder="AAAA-MM-JJ" name="debut" ng-model="exporte.debut" style="height:40px;"
                        ng-pattern='datePattern' required>
             </label>
 
             <label class="item item-input item-stacked-label">
                 <span class="input-label">Date de fin</span>
-                <input type="text" placeholder="AAAA-MM-JJ" name="fin" ng-model="exporte.fin" ng-pattern='datePattern'
+                <input type="text" placeholder="AAAA-MM-JJ" name="fin" ng-model="exporte.fin" ng-pattern='datePattern' style="height:40px;"
                        required>
             </label>
             <br>
@@ -35,7 +35,7 @@
             <div class="row" style="width: 100%; position:fixed; bottom:0;  ">
 
                 <div class="button-bar">
-                    <button type="button" ng-click="annuler()" class="button button-assertive">Annuler</button>
+                    <button type="button" ng-click="annuler()" class="button button-assertive" >Annuler</button>
                     <button type="button" ng-click="validation(exp)" class="button button-positive">Exporter</button>
                 </div>
 

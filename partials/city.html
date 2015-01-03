@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="yes" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/header.css" />
+        <link rel="stylesheet" type="text/css" href="css/entry.css" />
+        <link rel="stylesheet" type="text/css" href="css/search.css" />
+        <title>Hello World</title>
+    </head>
+    <body ng-controller="villeCtrl">
+	<!-- HEADER -->
+	<div id="header">
+        <a href="#export" class="ion-archive button-clear" style="right: 0; position: absolute; margin-right: 20px; color: white; font-size: 32px; margin-top: 15px;"></a>
+		<span id="menuBarTitle">VILLES</span>
+      
+         
+        <div class="col ">
+           <label class="toggle">
+                 
+               <input type="checkbox" ng-model="modeEdit">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+            </label>
+         
+
+
+   </div>
+	</div>
+	<!-- FIN HEADER -->
+	<div id="searchBar">
+		<form ng-submit="addville(newTodo)">
+<div class="list list-inset"> 
+  <label class="item item-input">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Ville" ng-model="newTodo.Commune" ng-value="newTodo.Commune">
+    <button ng-show="newTodo.Commune" class="button" type="submit">Créer !</button>
+    <!-- <button ng-hide="newTodo.Commune" class="button button-small" type="submit">Rechercher !</button> -->
+  </label>
+</div>
+</form>
+<!-- <h5>Model current : </h5> <b><p>{{model}}</p></b> -->
+	</div>
+
+	<ul class="entryList" id="cityList"  >
+		<li class="entry entryName" ng-repeat="ville in villes | filter:newTodo.Commune" 
+                  item="ville" >
+			<span href="" ng-click='selectville(ville.id)'> {{ ville.Commune }} ({{ ville.Codepos }})</span>
+		    
+        <div class="entryDelete" ng-click="removeville(ville.id)" ng-show="modeEdit"><i class="icon ion-close-round"></i></div>
+        <div class="entryEdit" ng-click="editville(ville.id)" ng-show="modeEdit"><i class="icon ion-compose"></i></div>
+        </li>
+	</ul>
+    </body>
+</html>
