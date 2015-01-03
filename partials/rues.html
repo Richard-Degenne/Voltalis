@@ -36,8 +36,8 @@
     </div>
 
     <ul class="entryList" id="cityList">
-        <li class="entry entryName" ng-repeat="rue in rues | filter:newTodo.Commune" item="rue">
-            <span href="" ng-click='selectrue(rue.id)'> {{ rue.nom }}</span>
+        <li class="entry entryName" href="" ng-click='selectrue(rue.id)' ng-repeat="rue in rues | filter:newTodo.Commune" item="rue">
+            <span> {{ rue.nom }}</span>
 
 
             <div class="entryDelete" ng-click="removerue(rue.id)" ng-show="modeEdit"><i

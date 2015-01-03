@@ -35,9 +35,9 @@
     </div>
 
     <ul class="entryList" id="cityList">
-        <li class="entry entryName" ng-repeat="ville in villes | filter:newTodo.Commune"
+        <li href=""  ng-click='selectville(ville.id)' class="entry entryName" ng-repeat="ville in villes | filter:newTodo.Commune"
             item="ville">
-            <span href=""  ng-click='selectville(ville.id)'> {{ ville.Commune }} ({{ ville.Codepos }})</span>
+            <span > {{ ville.Commune }} ({{ ville.Codepos }})</span>
 
             <div class="entryDelete" ng-click="removeville(ville.id)" ng-show="modeEdit"><i
                     class="icon ion-close-round"></i></div>

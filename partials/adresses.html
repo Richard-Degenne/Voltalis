@@ -35,9 +35,9 @@
     <div style="margin-bottom:52px;">
         <ul>
 
-            <li class="entryList" id="cityList" ng-repeat="adresse in adresses | orderBy:'created':false | filter:{numero:Sadresse} | affichage track by $index">
+            <li class="entryList" id="cityList" ng-click='selectadresse(adresse.id)' ng-repeat="adresse in adresses | orderBy:'created':false | filter:{numero:Sadresse} | affichage track by $index">
                 <div ng-class="getClass(adresse.statut)">
-                    <span ng-click='selectadresse(adresse.id)'> {{ adresse | ladresse }}</span>
+                    <span> {{ adresse | ladresse }}</span>
 
                     <div class="entryDelete" ng-click="removeadresse(adresse.uid)" ng-show="modeEdit"><i class="icon ion-close-round"></i></div>
                 </div>
